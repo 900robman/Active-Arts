@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Active Arts — More Pastel Palette Options</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f5f5f4; padding: 40px; }
+  h1 { text-align: center; margin-bottom: 8px; font-size: 28px; color: #292524; }
+  .subtitle { text-align: center; color: #78716c; margin-bottom: 40px; font-size: 15px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1200px; margin: 0 auto 32px; }
+  .palette { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 25px rgba(0,0,0,0.08); }
+  .palette h2 { padding: 24px 24px 4px; font-size: 20px; color: #292524; }
+  .palette .desc { padding: 0 24px 20px; color: #78716c; font-size: 14px; }
+  .swatches { display: flex; flex-direction: column; }
+  .swatch { display: flex; align-items: center; height: 64px; padding: 0 24px; }
+  .swatch .color-box { width: 48px; height: 48px; border-radius: 10px; flex-shrink: 0; border: 1px solid rgba(0,0,0,0.08); }
+  .swatch .info { margin-left: 16px; }
+  .swatch .label { font-weight: 600; font-size: 14px; color: #292524; }
+  .swatch .hex { font-size: 13px; color: #78716c; font-family: monospace; }
+  .swatch .usage { font-size: 11px; color: #a8a29e; }
+  .preview { margin: 20px 24px 24px; border-radius: 12px; overflow: hidden; border: 1px solid #e7e5e4; }
+  .preview-header { padding: 20px; text-align: center; }
+  .preview-header .tag { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+  .preview-header h3 { font-size: 18px; font-weight: 700; }
+  .preview-card { margin: 0 16px 16px; background: white; border-radius: 10px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .preview-icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; font-size: 18px; }
+  .preview-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .preview-card p { font-size: 12px; color: #57534e; line-height: 1.5; }
+  .preview-footer { padding: 16px 20px; text-align: center; font-size: 11px; }
+  .current-label { background: #e7e5e4; color: #57534e; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; display: inline-block; margin: 0 24px 16px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; max-width: 400px; } }
+</style>
+</head>
+<body>
+
+<h1>Active Arts — Pastel Palette Options</h1>
+<p class="subtitle">5 new options + current Soft Teal for comparison. Terracotta accent (#d4895a) stays the same throughout.</p>
+
+<div class="grid">
+
+  <!-- CURRENT: Soft Teal -->
+  <div class="palette">
+    <h2>Current: Soft Teal</h2>
+    <p class="desc">Blue-green — calming, nature-inspired</p>
+    <div class="swatches">
+      <div class="swatch"><div class="color-box" style="background:#2a4a4d"></div><div class="info"><div class="label">900</div><div class="hex">#2a4a4d</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#3d6668"></div><div class="info"><div class="label">800</div><div class="hex">#3d6668</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#5d9193"></div><div class="info"><div class="label">700</div><div class="hex">#5d9193</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#8ab5b7"></div><div class="info"><div class="label">600</div><div class="hex">#8ab5b7</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#b2d4d5"></div><div class="info"><div class="label">500</div><div class="hex">#b2d4d5</div></div></div>
+    </div>
+    <span class="current-label">Currently applied</span>
+    <div class="preview">
+      <div class="preview-header" style="background:#2a4a4d;">
+        <div class="tag" style="color:#d4895a;">What People Say</div>
+        <h3 style="color:#fdfbf7;">Voices from Our Community</h3>
+      </div>
+      <div style="background:#fdfbf7; padding: 16px;">
+        <div class="preview-card">
+          <div class="preview-icon" style="background:rgba(93,145,147,0.15); color:#5d9193;">&#9998;</div>
+          <h4 style="color:#3d6668;">Poetry Programmes</h4>
+          <p>Bringing performing arts to aged care communities across Auckland.</p>
+        </div>
+      </div>
+      <div class="preview-footer" style="background:#2a4a4d; color:rgba(232,220,200,0.7);">
+        &copy; 2026 Active Arts
+      </div>
+    </div>
+  </div>
+
+  <!-- 1: Dusty Rose -->
+  <div class="palette">
+    <h2>1. Dusty Rose</h2>
+    <p class="desc">Warm pink — gentle, inviting, empathetic</p>
+    <div class="swatches">
+      <div class="swatch"><div class="color-box" style="background:#4d2a3a"></div><div class="info"><div class="label">900</div><div class="hex">#4d2a3a</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#6b3f54"></div><div class="info"><div class="label">800</div><div class="hex">#6b3f54</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#9a6b80"></div><div class="info"><div class="label">700</div><div class="hex">#9a6b80</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#c49aab"></div><div class="info"><div class="label">600</div><div class="hex">#c49aab</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#dfc4ce"></div><div class="info"><div class="label">500</div><div class="hex">#dfc4ce</div></div></div>
+    </div>
+    <div class="preview">
+      <div class="preview-header" style="background:#4d2a3a;">
+        <div class="tag" style="color:#d4895a;">What People Say</div>
+        <h3 style="color:#fdfbf7;">Voices from Our Community</h3>
+      </div>
+      <div style="background:#fdfbf7; padding: 16px;">
+        <div class="preview-card">
+          <div class="preview-icon" style="background:rgba(154,107,128,0.15); color:#9a6b80;">&#9998;</div>
+          <h4 style="color:#6b3f54;">Poetry Programmes</h4>
+          <p>Bringing performing arts to aged care communities across Auckland.</p>
+        </div>
+      </div>
+      <div class="preview-footer" style="background:#4d2a3a; color:rgba(232,220,200,0.7);">
+        &copy; 2026 Active Arts
+      </div>
+    </div>
+  </div>
+
+  <!-- 2: Slate Blue -->
+  <div class="palette">
+    <h2>2. Slate Blue</h2>
+    <p class="desc">Cool blue-grey — calm, trustworthy, modern</p>
+    <div class="swatches">
+      <div class="swatch"><div class="color-box" style="background:#2d3a4d"></div><div class="info"><div class="label">900</div><div class="hex">#2d3a4d</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#435672"></div><div class="info"><div class="label">800</div><div class="hex">#435672</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#6880a0"></div><div class="info"><div class="label">700</div><div class="hex">#6880a0</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#98adc4"></div><div class="info"><div class="label">600</div><div class="hex">#98adc4</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#c2d1e0"></div><div class="info"><div class="label">500</div><div class="hex">#c2d1e0</div></div></div>
+    </div>
+    <div class="preview">
+      <div class="preview-header" style="background:#2d3a4d;">
+        <div class="tag" style="color:#d4895a;">What People Say</div>
+        <h3 style="color:#fdfbf7;">Voices from Our Community</h3>
+      </div>
+      <div style="background:#fdfbf7; padding: 16px;">
+        <div class="preview-card">
+          <div class="preview-icon" style="background:rgba(104,128,160,0.15); color:#6880a0;">&#9998;</div>
+          <h4 style="color:#435672;">Poetry Programmes</h4>
+          <p>Bringing performing arts to aged care communities across Auckland.</p>
+        </div>
+      </div>
+      <div class="preview-footer" style="background:#2d3a4d; color:rgba(232,220,200,0.7);">
+        &copy; 2026 Active Arts
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="grid">
+
+  <!-- 3: Warm Mauve -->
+  <div class="palette">
+    <h2>3. Warm Mauve</h2>
+    <p class="desc">Plum-grey — sophisticated, artistic, warm</p>
+    <div class="swatches">
+      <div class="swatch"><div class="color-box" style="background:#3e3345"></div><div class="info"><div class="label">900</div><div class="hex">#3e3345</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#584b63"></div><div class="info"><div class="label">800</div><div class="hex">#584b63</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#827590"></div><div class="info"><div class="label">700</div><div class="hex">#827590</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#afa4ba"></div><div class="info"><div class="label">600</div><div class="hex">#afa4ba</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#d2ccd8"></div><div class="info"><div class="label">500</div><div class="hex">#d2ccd8</div></div></div>
+    </div>
+    <div class="preview">
+      <div class="preview-header" style="background:#3e3345;">
+        <div class="tag" style="color:#d4895a;">What People Say</div>
+        <h3 style="color:#fdfbf7;">Voices from Our Community</h3>
+      </div>
+      <div style="background:#fdfbf7; padding: 16px;">
+        <div class="preview-card">
+          <div class="preview-icon" style="background:rgba(130,117,144,0.15); color:#827590;">&#9998;</div>
+          <h4 style="color:#584b63;">Poetry Programmes</h4>
+          <p>Bringing performing arts to aged care communities across Auckland.</p>
+        </div>
+      </div>
+      <div class="preview-footer" style="background:#3e3345; color:rgba(232,220,200,0.7);">
+        &copy; 2026 Active Arts
+      </div>
+    </div>
+  </div>
+
+  <!-- 4: Ocean Mist -->
+  <div class="palette">
+    <h2>4. Ocean Mist</h2>
+    <p class="desc">Desaturated blue — serene, airy, coastal</p>
+    <div class="swatches">
+      <div class="swatch"><div class="color-box" style="background:#2c3e4a"></div><div class="info"><div class="label">900</div><div class="hex">#2c3e4a</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#3f5b6b"></div><div class="info"><div class="label">800</div><div class="hex">#3f5b6b</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#638a9a"></div><div class="info"><div class="label">700</div><div class="hex">#638a9a</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#92b5c2"></div><div class="info"><div class="label">600</div><div class="hex">#92b5c2</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#bdd5de"></div><div class="info"><div class="label">500</div><div class="hex">#bdd5de</div></div></div>
+    </div>
+    <div class="preview">
+      <div class="preview-header" style="background:#2c3e4a;">
+        <div class="tag" style="color:#d4895a;">What People Say</div>
+        <h3 style="color:#fdfbf7;">Voices from Our Community</h3>
+      </div>
+      <div style="background:#fdfbf7; padding: 16px;">
+        <div class="preview-card">
+          <div class="preview-icon" style="background:rgba(99,138,154,0.15); color:#638a9a;">&#9998;</div>
+          <h4 style="color:#3f5b6b;">Poetry Programmes</h4>
+          <p>Bringing performing arts to aged care communities across Auckland.</p>
+        </div>
+      </div>
+      <div class="preview-footer" style="background:#2c3e4a; color:rgba(232,220,200,0.7);">
+        &copy; 2026 Active Arts
+      </div>
+    </div>
+  </div>
+
+  <!-- 5: Eucalyptus -->
+  <div class="palette">
+    <h2>5. Eucalyptus</h2>
+    <p class="desc">Grey-green — organic, muted, botanical</p>
+    <div class="swatches">
+      <div class="swatch"><div class="color-box" style="background:#33443a"></div><div class="info"><div class="label">900</div><div class="hex">#33443a</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#4a6356"></div><div class="info"><div class="label">800</div><div class="hex">#4a6356</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#728f7e"></div><div class="info"><div class="label">700</div><div class="hex">#728f7e</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#a0b8ab"></div><div class="info"><div class="label">600</div><div class="hex">#a0b8ab</div></div></div>
+      <div class="swatch"><div class="color-box" style="background:#c8d8ce"></div><div class="info"><div class="label">500</div><div class="hex">#c8d8ce</div></div></div>
+    </div>
+    <div class="preview">
+      <div class="preview-header" style="background:#33443a;">
+        <div class="tag" style="color:#d4895a;">What People Say</div>
+        <h3 style="color:#fdfbf7;">Voices from Our Community</h3>
+      </div>
+      <div style="background:#fdfbf7; padding: 16px;">
+        <div class="preview-card">
+          <div class="preview-icon" style="background:rgba(114,143,126,0.15); color:#728f7e;">&#9998;</div>
+          <h4 style="color:#4a6356;">Poetry Programmes</h4>
+          <p>Bringing performing arts to aged care communities across Auckland.</p>
+        </div>
+      </div>
+      <div class="preview-footer" style="background:#33443a; color:rgba(232,220,200,0.7);">
+        &copy; 2026 Active Arts
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

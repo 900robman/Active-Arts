@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Active Arts — Style Guide (Clay & Sienna)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      color: #2c2622;
+      background: #d4cec8;
+      padding: 48px 24px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #3a2e28;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #7a6e66;
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #463e38;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e2d2b6;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    /* Colour swatches */
+    .palette-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .swatch {
+      width: 120px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(28, 24, 22, 0.08);
+    }
+
+    .swatch-color {
+      height: 80px;
+      position: relative;
+    }
+
+    .swatch-info {
+      padding: 10px 12px;
+    }
+
+    .swatch-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #463e38;
+    }
+
+    .swatch-hex {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: #7a6e66;
+      margin-top: 2px;
+    }
+
+    .swatch-role {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      color: #a89e96;
+      margin-top: 4px;
+    }
+
+    /* Usage bar */
+    .usage-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .usage-sample {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .usage-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #463e38;
+    }
+
+    .usage-desc {
+      font-size: 12px;
+      color: #7a6e66;
+      margin-top: 2px;
+    }
+
+    /* Font samples */
+    .font-sample {
+      background: #fff;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 12px rgba(28, 24, 22, 0.08);
+    }
+
+    .font-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: #a89e96;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .font-heading-sample {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      color: #3a2e28;
+    }
+
+    .font-body-sample {
+      font-family: 'Lora', Georgia, serif;
+      color: #2c2622;
+      line-height: 1.7;
+    }
+
+    /* Combo preview */
+    .combo-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 25px rgba(28, 24, 22, 0.08);
+      margin-bottom: 16px;
+    }
+
+    .combo-hero {
+      padding: 40px 32px;
+      position: relative;
+    }
+
+    .combo-hero h3 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .combo-hero p {
+      font-size: 15px;
+      opacity: 0.8;
+      max-width: 400px;
+    }
+
+    .combo-hero .btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 24px;
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+
+    .combo-body {
+      padding: 24px 32px;
+    }
+
+    .combo-body h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .combo-body p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #5c524a;
+    }
+
+    .theme-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: #a89e96;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Active Arts — Style Guide (Clay & Sienna)</h1>
+    <p class="subtitle">Colour scheme: Clay & Sienna</p>
+
+    <!-- PRIMARY -->
+    <div class="section">
+      <h2>Primary — Clay</h2>
+      <div class="palette-group">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #3a2e28;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">forest-900</div>
+            <div class="swatch-hex">#3a2e28</div>
+            <div class="swatch-role">Hero bg, headings</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #5c4a40;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">forest-800</div>
+            <div class="swatch-hex">#5c4a40</div>
+            <div class="swatch-role">Selection bg</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #7d6a5c;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">forest-700</div>
+            <div class="swatch-hex">#7d6a5c</div>
+            <div class="swatch-role">Primary, links, ring</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #a08e80;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">forest-600</div>
+            <div class="swatch-hex">#a08e80</div>
+            <div class="swatch-role">Lighter accent</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #c4b4a6;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">forest-500</div>
+            <div class="swatch-hex">#c4b4a6</div>
+            <div class="swatch-role">Subtle tint</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECONDARY -->
+    <div class="section">
+      <h2>Secondary — Sand</h2>
+      <div class="palette-group">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #fdf9f2; border: 1px solid #e2d2b6;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">cream-50</div>
+            <div class="swatch-hex">#fdf9f2</div>
+            <div class="swatch-role">Page bg</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #faf4e8; border: 1px solid #e2d2b6;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">cream-100</div>
+            <div class="swatch-hex">#faf4e8</div>
+            <div class="swatch-role">Secondary bg</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #f0e6d0;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">cream-200</div>
+            <div class="swatch-hex">#f0e6d0</div>
+            <div class="swatch-role">Muted bg</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #e2d2b6;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">cream-300</div>
+            <div class="swatch-hex">#e2d2b6</div>
+            <div class="swatch-role">Borders, input</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #d0bc98;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">cream-400</div>
+            <div class="swatch-hex">#d0bc98</div>
+            <div class="swatch-role">Heavier border</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCENT -->
+    <div class="section">
+      <h2>Accent — Sienna</h2>
+      <div class="palette-group">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #d06840;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">terra-400</div>
+            <div class="swatch-hex">#d06840</div>
+            <div class="swatch-role">Icons, highlights</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #b85530;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">terra-500</div>
+            <div class="swatch-hex">#b85530</div>
+            <div class="swatch-role">CTA buttons</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #9e4525;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">terra-600</div>
+            <div class="swatch-hex">#9e4525</div>
+            <div class="swatch-role">Button hover</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #85381e;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">terra-700</div>
+            <div class="swatch-hex">#85381e</div>
+            <div class="swatch-role">Deepest accent</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEUTRALS -->
+    <div class="section">
+      <h2>Neutrals — Warm Charcoal</h2>
+      <div class="palette-group">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #1c1816;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">charcoal-900</div>
+            <div class="swatch-hex">#1c1816</div>
+            <div class="swatch-role">Darkest text</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #2c2622;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">charcoal-800</div>
+            <div class="swatch-hex">#2c2622</div>
+            <div class="swatch-role">Body text</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #463e38;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">charcoal-700</div>
+            <div class="swatch-hex">#463e38</div>
+            <div class="swatch-role">Nav text, secondary</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #5c524a;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">charcoal-600</div>
+            <div class="swatch-hex">#5c524a</div>
+            <div class="swatch-role">Descriptions</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #7a6e66;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">charcoal-500</div>
+            <div class="swatch-hex">#7a6e66</div>
+            <div class="swatch-role">Muted text</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #a89e96;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">charcoal-400</div>
+            <div class="swatch-hex">#a89e96</div>
+            <div class="swatch-role">Placeholder</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #d4cec8;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">charcoal-300</div>
+            <div class="swatch-hex">#d4cec8</div>
+            <div class="swatch-role">Body bg (outer)</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #e6e2de; border: 1px solid #d4cec8;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">charcoal-200</div>
+            <div class="swatch-hex">#e6e2de</div>
+            <div class="swatch-role">Light divider</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #f4f2f0; border: 1px solid #d4cec8;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">charcoal-100</div>
+            <div class="swatch-hex">#f4f2f0</div>
+            <div class="swatch-role">Lightest neutral</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TYPOGRAPHY -->
+    <div class="section">
+      <h2>Typography</h2>
+      <div class="font-sample">
+        <div class="font-label">Headings — Inter Variable</div>
+        <div class="font-heading-sample" style="font-size: 36px; margin-bottom: 8px;">Igniting creativity and memory</div>
+        <div class="font-heading-sample" style="font-size: 24px; margin-bottom: 8px;">What We Do</div>
+        <div class="font-heading-sample" style="font-size: 18px; font-weight: 600;">Who We Are</div>
+      </div>
+      <div class="font-sample">
+        <div class="font-label">Body — Lora Variable</div>
+        <div class="font-body-sample" style="font-size: 16px;">Bringing the performing arts to aged care communities across Auckland through interactive poetry, training and speaking. Nina and Fiona have been delivering poetry sharing sessions in aged care homes since 2015.</div>
+      </div>
+    </div>
+
+    <!-- COMBO PREVIEW -->
+    <div class="section">
+      <h2>In Context — Current Theme</h2>
+      <div class="theme-label">Clay & Sienna</div>
+      <div class="combo-card">
+        <div class="combo-hero" style="background: linear-gradient(135deg, #3a2e28, #5c4a40 50%, #7d6a5c);">
+          <h3 style="color: #fdf9f2; font-family: 'Inter', sans-serif;">Igniting creativity and memory through poetry</h3>
+          <p style="color: #e2d2b6; font-family: 'Lora', serif;">Bringing the performing arts to aged care communities across Auckland.</p>
+          <a class="btn" style="background: #b85530; color: #fff;" href="#">Get in Touch</a>
+        </div>
+        <div class="combo-body" style="background: #fdf9f2;">
+          <h4 style="color: #3a2e28; font-family: 'Inter', sans-serif;">What We Do</h4>
+          <p>Interactive poetry, training and speaking programmes for aged care communities. Our sessions encourage discussion, participation and involvement.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- KEY MAPPINGS -->
+    <div class="section">
+      <h2>Where Colours Are Used</h2>
+      <div class="usage-row">
+        <div class="usage-sample" style="background: #3a2e28;"></div>
+        <div>
+          <div class="usage-label">Hero background, section headings</div>
+          <div class="usage-desc">forest-900 — the darkest primary, anchors the top of the page</div>
+        </div>
+      </div>
+      <div class="usage-row">
+        <div class="usage-sample" style="background: #7d6a5c;"></div>
+        <div>
+          <div class="usage-label">Primary interactive colour</div>
+          <div class="usage-desc">forest-700 — nav hover, focus rings, link accents</div>
+        </div>
+      </div>
+      <div class="usage-row">
+        <div class="usage-sample" style="background: #b85530;"></div>
+        <div>
+          <div class="usage-label">CTA buttons, hero badge icons</div>
+          <div class="usage-desc">terra-500 — the main action colour across the site</div>
+        </div>
+      </div>
+      <div class="usage-row">
+        <div class="usage-sample" style="background: #fdf9f2; border: 1px solid #e2d2b6;"></div>
+        <div>
+          <div class="usage-label">Page background (inside container)</div>
+          <div class="usage-desc">cream-50 — warm white that all content sits on</div>
+        </div>
+      </div>
+      <div class="usage-row">
+        <div class="usage-sample" style="background: #d4cec8;"></div>
+        <div>
+          <div class="usage-label">Body background (outside container)</div>
+          <div class="usage-desc">charcoal-300 — visible on wide screens flanking the 1280px container</div>
+        </div>
+      </div>
+      <div class="usage-row">
+        <div class="usage-sample" style="background: #e2d2b6;"></div>
+        <div>
+          <div class="usage-label">Borders, input fields, dividers</div>
+          <div class="usage-desc">cream-300 — the default border colour throughout</div>
+        </div>
+      </div>
+      <div class="usage-row">
+        <div class="usage-sample" style="background: #2c2622;"></div>
+        <div>
+          <div class="usage-label">Body text</div>
+          <div class="usage-desc">charcoal-800 — main reading text colour</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

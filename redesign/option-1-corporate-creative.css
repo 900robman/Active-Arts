@@ -1,0 +1,527 @@
+/* ==========================================================================
+   ACTIVE ARTS — Redesign Option 1: Corporate Creative
+   ---------------------------------------------------------------------------
+   Deep navies, slate greys, vibrant coral accent.
+   Typography: DM Sans (headings) + Source Serif 4 (body)
+
+   HOW TO APPLY:
+   1. Go to WordPress Admin > Appearance > Customize > Additional CSS
+   2. Paste everything below the Google Fonts @import lines
+   3. Add the Google Fonts link to your site <head> via a plugin like
+      "Insert Headers and Footers" or Elementor > Settings > Custom Code:
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+   ========================================================================== */
+
+/* --- Google Fonts (works in Additional CSS) --- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES
+   ========================================================================== */
+:root {
+  /* Primary palette */
+  --aa-navy:        #0f1b2d;
+  --aa-navy-light:  #1a2d47;
+  --aa-slate:       #3d4f5f;
+  --aa-slate-light: #6b7f8e;
+  --aa-accent:      #e85d4a;    /* vibrant coral */
+  --aa-accent-hover: #d14a38;
+  --aa-accent-soft: rgba(232, 93, 74, 0.08);
+
+  /* Neutrals */
+  --aa-white:       #ffffff;
+  --aa-off-white:   #f7f8fa;
+  --aa-light-grey:  #ebeef2;
+  --aa-mid-grey:    #c4ccd4;
+  --aa-text:        #2c3e50;
+  --aa-text-light:  #5a6b7b;
+
+  /* Typography */
+  --aa-font-heading: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --aa-font-body:    'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+  /* Spacing */
+  --aa-section-pad: 80px;
+  --aa-radius:      10px;
+  --aa-radius-sm:   6px;
+
+  /* Shadows */
+  --aa-shadow-sm:   0 2px 8px rgba(15, 27, 45, 0.06);
+  --aa-shadow-md:   0 4px 20px rgba(15, 27, 45, 0.10);
+  --aa-shadow-lg:   0 8px 40px rgba(15, 27, 45, 0.12);
+
+  /* Transitions */
+  --aa-transition:  all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ==========================================================================
+   GLOBAL RESET & BASE
+   ========================================================================== */
+body,
+body.home,
+body.page {
+  font-family: var(--aa-font-body) !important;
+  font-size: 17px !important;
+  line-height: 1.75 !important;
+  color: var(--aa-text) !important;
+  background-color: var(--aa-white) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6,
+.elementor-heading-title,
+.elementor-image-box-title {
+  font-family: var(--aa-font-heading) !important;
+  color: var(--aa-navy) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.2 !important;
+}
+
+h1, .elementor-size-xl {
+  font-size: clamp(2.2rem, 5vw, 3.4rem) !important;
+}
+
+h3, .elementor-size-large {
+  font-size: clamp(1.4rem, 3vw, 1.8rem) !important;
+}
+
+h4 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--aa-accent) !important;
+  font-weight: 500 !important;
+  position: relative;
+  padding-bottom: 16px !important;
+}
+
+/* Accent underline on section headings */
+h4.elementor-heading-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--aa-accent);
+  border-radius: 2px;
+}
+
+/* Center the underline when text is centered */
+.elementor-widget-heading .elementor-widget-container[style*="text-align: center"] h4::after,
+.elementor-widget-heading.elementor-widget-heading h4::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+p,
+.elementor-text-editor p,
+.elementor-widget-text-editor p {
+  font-family: var(--aa-font-body) !important;
+  font-size: 17px !important;
+  line-height: 1.75 !important;
+  color: var(--aa-text) !important;
+  margin-bottom: 1.25em !important;
+}
+
+/* Smaller descriptive text under names */
+.elementor-image-box-title {
+  font-size: 1.25rem !important;
+  margin-bottom: 4px !important;
+  color: var(--aa-navy) !important;
+}
+
+a {
+  color: var(--aa-accent) !important;
+  text-decoration: none !important;
+  transition: var(--aa-transition) !important;
+}
+
+a:hover {
+  color: var(--aa-accent-hover) !important;
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+.navbar,
+.navbar-default,
+.navbar-fixed-top {
+  background-color: var(--aa-white) !important;
+  border-bottom: 1px solid var(--aa-light-grey) !important;
+  box-shadow: var(--aa-shadow-sm) !important;
+  padding: 8px 0 !important;
+  transition: var(--aa-transition) !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-family: var(--aa-font-heading) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  color: var(--aa-slate) !important;
+  padding: 12px 20px !important;
+  border-radius: var(--aa-radius-sm) !important;
+  transition: var(--aa-transition) !important;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: var(--aa-accent) !important;
+  background-color: var(--aa-accent-soft) !important;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: var(--aa-accent) !important;
+  background-color: transparent !important;
+}
+
+/* Logo sizing */
+.navbar-brand img {
+  max-height: 48px !important;
+  width: auto !important;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.elementor-element-66c90870 {
+  min-height: 85vh !important;
+  background-color: var(--aa-navy) !important;
+  position: relative;
+}
+
+.elementor-element-66c90870 .elementor-background-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 27, 45, 0.92) 0%,
+    rgba(26, 45, 71, 0.85) 50%,
+    rgba(61, 79, 95, 0.80) 100%
+  ) !important;
+}
+
+.elementor-element-66c90870 h1.elementor-heading-title {
+  color: var(--aa-white) !important;
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem) !important;
+  line-height: 1.15 !important;
+  max-width: 600px;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero checklist items */
+.elementor-element-8fe0d09 .elementor-icon-list-text {
+  font-family: var(--aa-font-heading) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  letter-spacing: 0.03em !important;
+}
+
+.elementor-element-8fe0d09 .elementor-icon-list-icon i {
+  color: var(--aa-accent) !important;
+  font-size: 18px !important;
+}
+
+.elementor-element-8fe0d09 .elementor-icon-list-item {
+  padding-right: 24px !important;
+}
+
+/* ==========================================================================
+   CONTENT SECTIONS
+   ========================================================================== */
+.elementor-section.elementor-top-section {
+  padding: var(--aa-section-pad) 0 !important;
+}
+
+/* Alternate section backgrounds */
+.elementor-element-2a0fdebf,
+.elementor-element-7ea438f {
+  background-color: var(--aa-off-white) !important;
+}
+
+.elementor-element-663d5d4 {
+  background-color: var(--aa-white) !important;
+}
+
+/* ==========================================================================
+   TEAM BIO CARDS (Who We Are)
+   ========================================================================== */
+.elementor-image-box-wrapper {
+  background: var(--aa-white) !important;
+  border-radius: var(--aa-radius) !important;
+  overflow: hidden;
+  box-shadow: var(--aa-shadow-sm) !important;
+  transition: var(--aa-transition) !important;
+}
+
+.elementor-image-box-wrapper:hover {
+  box-shadow: var(--aa-shadow-md) !important;
+  transform: translateY(-4px);
+}
+
+/* Team photos */
+.elementor-image-box-img img {
+  border-radius: var(--aa-radius) var(--aa-radius) 0 0 !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  transition: var(--aa-transition) !important;
+}
+
+.elementor-image-box-wrapper:hover .elementor-image-box-img img {
+  transform: scale(1.03);
+}
+
+.elementor-image-box-content {
+  padding: 20px 16px 12px !important;
+}
+
+/* Bio text containers */
+.elementor-element-3bd84ac0,
+.elementor-element-3c0c0d21,
+.elementor-element-020b47e {
+  padding: 0 8px !important;
+}
+
+/* ==========================================================================
+   ALL IMAGES — ROUNDED CORNERS
+   ========================================================================== */
+.elementor-widget-image img,
+.elementor-image-box-img img,
+.elementor-widget-video .elementor-wrapper,
+img.attachment-full {
+  border-radius: var(--aa-radius) !important;
+}
+
+figure.elementor-image-box-img {
+  border-radius: var(--aa-radius) !important;
+  overflow: hidden !important;
+}
+
+/* ==========================================================================
+   VIDEO SECTIONS
+   ========================================================================== */
+.elementor-widget-html,
+.elementor-widget-video {
+  border-radius: var(--aa-radius) !important;
+  overflow: hidden !important;
+  box-shadow: var(--aa-shadow-md) !important;
+}
+
+/* Facebook video embed */
+.elementor-element-a04bc35 {
+  border-radius: var(--aa-radius) !important;
+  overflow: hidden !important;
+}
+
+/* ==========================================================================
+   TESTIMONIALS / QUOTES
+   ========================================================================== */
+blockquote,
+.elementor-text-editor blockquote {
+  border-left: 4px solid var(--aa-accent) !important;
+  padding: 24px 32px !important;
+  margin: 32px 0 !important;
+  background: var(--aa-accent-soft) !important;
+  border-radius: 0 var(--aa-radius) var(--aa-radius) 0 !important;
+  font-style: italic !important;
+  color: var(--aa-slate) !important;
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.elementor-button,
+.btn,
+button[type="submit"],
+input[type="submit"] {
+  font-family: var(--aa-font-heading) !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  background-color: var(--aa-accent) !important;
+  color: var(--aa-white) !important;
+  border: none !important;
+  border-radius: var(--aa-radius-sm) !important;
+  padding: 14px 32px !important;
+  box-shadow: 0 4px 14px rgba(232, 93, 74, 0.3) !important;
+  transition: var(--aa-transition) !important;
+  cursor: pointer !important;
+}
+
+.elementor-button:hover,
+.btn:hover,
+button[type="submit"]:hover {
+  background-color: var(--aa-accent-hover) !important;
+  box-shadow: 0 6px 20px rgba(232, 93, 74, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+.elementor-button:active,
+.btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(232, 93, 74, 0.25) !important;
+}
+
+/* ==========================================================================
+   SOCIAL ICONS
+   ========================================================================== */
+.elementor-social-icon {
+  background-color: var(--aa-navy-light) !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  transition: var(--aa-transition) !important;
+}
+
+.elementor-social-icon:hover {
+  background-color: var(--aa-accent) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 4px 12px rgba(232, 93, 74, 0.3) !important;
+}
+
+.elementor-social-icon i {
+  color: var(--aa-white) !important;
+}
+
+/* ==========================================================================
+   ICON LIST (Programmes, Training, Speaking)
+   ========================================================================== */
+.elementor-icon-list-icon i {
+  transition: var(--aa-transition) !important;
+}
+
+/* ==========================================================================
+   DIVIDERS
+   ========================================================================== */
+.elementor-divider-separator {
+  border-color: var(--aa-light-grey) !important;
+}
+
+/* ==========================================================================
+   CONTACT SECTION
+   ========================================================================== */
+.elementor-element h5.elementor-heading-title,
+h5 {
+  font-family: var(--aa-font-heading) !important;
+  color: var(--aa-navy) !important;
+  font-weight: 700 !important;
+}
+
+/* Make the email link stand out */
+a[href*="mailto:"],
+a[href*="creativebusiness"] {
+  color: var(--aa-accent) !important;
+  font-family: var(--aa-font-heading) !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  border-bottom: 2px solid transparent !important;
+  transition: var(--aa-transition) !important;
+}
+
+a[href*="mailto:"]:hover,
+a[href*="creativebusiness"]:hover {
+  border-bottom-color: var(--aa-accent) !important;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer,
+.footer-content,
+.hestia-bottom-footer-content,
+.footer {
+  background-color: var(--aa-navy) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  padding: 32px 0 !important;
+  font-family: var(--aa-font-heading) !important;
+  font-size: 13px !important;
+}
+
+footer a,
+.footer a {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+footer a:hover,
+.footer a:hover {
+  color: var(--aa-accent) !important;
+}
+
+/* ==========================================================================
+   SCROLLBAR (subtle refinement for Webkit browsers)
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--aa-off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--aa-mid-grey);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--aa-slate-light);
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --aa-section-pad: 48px;
+  }
+
+  h1, .elementor-size-xl {
+    font-size: 2rem !important;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    padding: 10px 16px !important;
+  }
+
+  .elementor-element-66c90870 {
+    min-height: 70vh !important;
+  }
+
+  .elementor-image-box-wrapper {
+    margin-bottom: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --aa-section-pad: 32px;
+  }
+
+  h1, .elementor-size-xl {
+    font-size: 1.75rem !important;
+  }
+
+  p, .elementor-text-editor p {
+    font-size: 15px !important;
+  }
+}
+
+/* ==========================================================================
+   PRINT STYLES
+   ========================================================================== */
+@media print {
+  .navbar, footer { display: none !important; }
+  body { font-size: 12pt !important; }
+  h1 { font-size: 24pt !important; }
+}
