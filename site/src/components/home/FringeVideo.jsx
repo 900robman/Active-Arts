@@ -3,7 +3,7 @@ import { videos } from '../../data/content';
 
 export default function FringeVideo() {
   return (
-    <section className="py-24 bg-cream-100">
+    <section className="py-24 bg-cream-200">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 items-center">
           <motion.div
