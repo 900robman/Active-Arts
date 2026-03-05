@@ -17,11 +17,21 @@ export default function ContactForm() {
     formState: { errors, isSubmitting },
   } = useForm();
 
+  const [error, setError] = useState(false);
+
   const onSubmit = async (data) => {
-    const subject = encodeURIComponent(`Website inquiry from ${data.name}`);
-    const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
-    window.location.href = `mailto:${siteInfo.email}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setError(false);
+    try {
+      const res = await fetch(import.meta.env.VITE_CONTACT_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error('Failed to send');
+      setSubmitted(true);
+    } catch {
+      setError(true);
+    }
   };
 
   return (
@@ -89,11 +99,7 @@ export default function ContactForm() {
                     Thank you!
                   </h3>
                   <p className="text-charcoal-600">
-                    Your email client should have opened with your message. If not,
-                    please email us directly at{' '}
-                    <a href={`mailto:${siteInfo.email}`} className="text-terra-500 hover:text-terra-600 font-medium">
-                      {siteInfo.email}
-                    </a>
+                    We&apos;ve received your message and will be in touch soon.
                   </p>
                 </CardContent>
               </Card>
@@ -157,6 +163,15 @@ export default function ContactForm() {
                         <p className="text-sm text-terra-600">{errors.message.message}</p>
                       )}
                     </div>
+
+                    {error && (
+                      <p className="text-sm text-terra-600">
+                        Something went wrong. Please try again or email us at{' '}
+                        <a href={`mailto:${siteInfo.email}`} className="underline font-medium">
+                          {siteInfo.email}
+                        </a>
+                      </p>
+                    )}
 
                     {/* Submit */}
                     <Button

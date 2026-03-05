@@ -1,8 +1,40 @@
+import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { testimonials } from '../../data/content';
 import { Card, CardContent } from '@/components/ui/card';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Testimonials() {
+  const scrollRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 0);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const el = scrollRef.current;
+    if (el) el.addEventListener('scroll', checkScroll, { passive: true });
+    window.addEventListener('resize', checkScroll);
+    return () => {
+      if (el) el.removeEventListener('scroll', checkScroll);
+      window.removeEventListener('resize', checkScroll);
+    };
+  }, []);
+
+  const scroll = (direction) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.querySelector(':scope > div')?.offsetWidth || 340;
+    const pageScroll = (cardWidth + 32) * 3;
+    el.scrollBy({ left: direction === 'left' ? -pageScroll : pageScroll, behavior: 'smooth' });
+  };
+
   return (
     <section className="py-24 bg-forest-900 relative overflow-hidden">
       {/* Subtle background texture */}
@@ -21,21 +53,45 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="flex items-end justify-between mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-cream-50">
             Voices from Our Community
           </h2>
+
+          <div className="hidden sm:flex gap-2">
+            <button
+              onClick={() => scroll('left')}
+              disabled={!canScrollLeft}
+              className="p-2 rounded-full border border-cream-300/20 text-cream-300 hover:bg-cream-300/10 transition-colors disabled:opacity-30 disabled:cursor-default"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              disabled={!canScrollRight}
+              className="p-2 rounded-full border border-cream-300/20 text-cream-300 hover:bg-cream-300/10 transition-colors disabled:opacity-30 disabled:cursor-default"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          ref={scrollRef}
+          className="flex gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 -mb-4"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+        >
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="snap-start shrink-0 w-[85vw] sm:w-[calc((100%-4rem)/3)]"
             >
               <Card className="relative h-full bg-forest-800 backdrop-blur-sm border-cream-300/10 shadow-none">
                 <CardContent className="pt-8">

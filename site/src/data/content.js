@@ -101,6 +101,16 @@ export const testimonials = [
       "Too often in life we rush to 'fill the gaps' as if reflection is wrong. The skilled way in which this and many anomalies regarding poetry were addressed in this wonderful training session was outstanding. It was an informative and fun session that demystified the fear of poetry. Personally, I will carry this heightened awareness back to my residents.",
     author: 'Karina Hyde, Diversional Therapist, Selwyn Village',
   },
+  {
+    quote:
+      'That was SUCH a wonderful experience and you must tell me when the poetry club is held again - I definitely want to join.',
+    author: 'Maureen (Resident)',
+  },
+  {
+    quote:
+      'Gwyneth absolutely enjoys sharing her poetry and it is amazing to see the pride and sense of purpose she feels in sharing her writing - thank you for creating space for that.',
+    author: 'Nethmi Weerawarna, Activities Coordinator, Bupa',
+  },
 ];
 
 export const videos = {

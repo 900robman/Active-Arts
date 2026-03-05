@@ -66,6 +66,11 @@ export default function Navbar() {
             alt={siteInfo.name}
             className="h-16 w-auto transition-transform duration-300 group-hover:scale-105"
           />
+          <span className={`font-heading text-xs font-medium leading-tight transition-colors duration-300 ${
+            scrolled ? 'text-charcoal-500' : 'text-cream-300/70'
+          }`}>
+            A Registered NZ<br />Charitable Trust.
+          </span>
         </Link>
 
         {/* Desktop nav */}
