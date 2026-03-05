@@ -19,13 +19,12 @@ const itemVariants = {
 export default function Hero() {
   return (
     <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-      {/* Background with image + gradient overlay */}
-      <div className="absolute inset-0 bg-forest-900">
+      {/* Background image — no overlay */}
+      <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/hero-bg-1920x1080.jpg')" }}
+          style={{ backgroundImage: "url('/images/AA hero 2.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-forest-900/60 via-forest-800/50 to-forest-700/40" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cream-50 to-transparent" />
       </div>
 
@@ -36,12 +35,6 @@ export default function Hero() {
           animate="visible"
           className="max-w-[520px]"
         >
-          <motion.div variants={itemVariants} className="mb-6">
-            <Badge className="bg-terra-500/20 text-terra-400 border-transparent font-heading text-xs font-semibold tracking-widest uppercase hover:bg-terra-500/20">
-              NZ Charitable Trust
-            </Badge>
-          </motion.div>
-
           <motion.h1
             variants={itemVariants}
             className="text-4xl sm:text-5xl lg:text-5xl font-heading font-bold text-cream-50 leading-[1.1] tracking-tight"
@@ -51,7 +44,7 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="mt-6 text-lg text-cream-300/80 max-w-lg leading-relaxed"
+            className="mt-6 text-lg text-cream-50 max-w-lg leading-relaxed"
           >
             Bringing the performing arts to aged care communities across Auckland
             through interactive poetry, training and speaking.

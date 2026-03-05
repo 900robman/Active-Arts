@@ -9,7 +9,6 @@ import FringeVideo from './components/home/FringeVideo';
 import Testimonials from './components/home/Testimonials';
 import ContactForm from './components/home/ContactForm';
 import NewsPage from './components/news/NewsPage';
-import ThemeSwitcher from './components/ThemeSwitcher';
 
 function HomePage() {
   return (
@@ -36,7 +35,6 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-      <ThemeSwitcher />
     </div>
   );
 }
